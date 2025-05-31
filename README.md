@@ -54,10 +54,3 @@ DUTD-AI/
     └── result.html         # Result/diagnosis output
 ```
 
----
-
-## 👨‍🔬 Created By
-
-- **Nimer Abu Mheasen**
-- **Ezz Al Deen A. Nusairat**
-- **Mohammad Khaled Khader**
