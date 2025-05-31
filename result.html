@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DUTD.AI - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='Icon.png') }}" />
+</head>
+<body class="result-page">
+    <div class="result-container">
+        <h1 class="result-text">{{ result }}</h1>
+        <div class="rating-container">
+            <h2>Rate your result:</h2>
+            <div class="rating-buttons">
+                <button class="rating-btn" onclick="rate(this)">1</button>
+                <button class="rating-btn" onclick="rate(this)">2</button>
+                <button class="rating-btn" onclick="rate(this)">3</button>
+                <button class="rating-btn" onclick="rate(this)">4</button>
+                <button class="rating-btn" onclick="rate(this)">5</button>
+            </div>
+            <div id="thank-you" class="thank-you-message" style="display:none;">
+                Thank you for your rating.
+            </div>
+        </div>
+        <div class="button-row">
+            <a href="/" class="start-btn back-btn">Back to Home</a>
+            {% if result != "Healthy" %}
+            <div class="clinic-buttons">
+                <button onclick="goToNearestHospital()" class="start-btn hospital-btn">Find Nearest Hospital</button>
+                <button onclick="goToNearestClinic()" class="start-btn hospital-btn">Find Nearest Urine Tract Clinic</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+<script>
+    function rate(button) {
+        // Remove selected class from all buttons
+        document.querySelectorAll('.rating-btn').forEach(btn => btn.classList.remove('selected'));
+        // Add selected class to clicked button
+        button.classList.add('selected');
+        // Show thank you message
+        document.getElementById('thank-you').style.display = 'block';
+    }
+
+    function goToNearestHospital() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const mapsURL = `https://www.google.com/maps/search/nearest+hospital/@${lat},${lon},17z`;
+                window.open(mapsURL, '_blank');
+            }, function (error) {
+                alert("Location access denied. Please allow GPS access.");
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    }
+
+    function goToNearestClinic() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const mapsURL = `https://www.google.com/maps/search/nearest+urine+tract+clinic/@${lat},${lon},17z`;
+                window.open(mapsURL, '_blank');
+            }, function (error) {
+                alert("Location access denied. Please allow GPS access.");
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    }
+</script>
+</body>
+</html>
