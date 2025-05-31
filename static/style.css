@@ -1,0 +1,226 @@
+/* Core Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Index Page */
+.index-page {
+    background-image: url('index_back.png');
+}
+
+.index-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.index-title {
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin: 0 0 10px 0;
+}
+
+.index-subtitle {
+    font-size: 0.9em;
+    margin: 0 0 15px 0;
+}
+
+.start-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+/* Prediction Page */
+.predict-page {
+    background-image: url('predict_back.png');
+}
+
+.predict-container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 1.1em;
+    color: #4CAF50;
+    margin: 15px 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.num-input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 0.9em;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.option-btn {
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    background: #444;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.2s;
+}
+
+.option-btn.selected {
+    background: #4CAF50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+/* Result Page */
+.result-page {
+    background-image: url('result_back.png');
+}
+
+.result-container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.result-text {
+    font-size: 2em;
+    color: #4CAF50;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 1.2em;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+/* Flex container to align buttons */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Container for the two green buttons stacked vertically */
+.clinic-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Remove any float if previously set */
+.hospital-btn,
+.back-btn {
+    float: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .predict-container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .btn-group {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+    
+    .result-text {
+        font-size: 1.5em;
+    }
+}
+
+/* Rating Buttons */
+.rating-container {
+    margin-top: 20px;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rating-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.rating-btn:hover {
+    background: #45a049;
+}
+
+.rating-btn:active {
+    background: #3e8e41;
+}
+
+/* Selected rating button style */
+.rating-btn.selected {
+    background: #2e7d32;
+    box-shadow: 0 0 8px 3px #81c784;
+}
+
+.thank-you-message {
+    margin-top: 15px;
+}
