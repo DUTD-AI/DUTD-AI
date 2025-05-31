@@ -58,6 +58,6 @@ DUTD-AI/
 
 ## 👨‍🔬 Created By
 
-- **Ezz Al Deen A. Nusairat**
 - **Nimer Abu Mheasen**
+- **Ezz Al Deen A. Nusairat**
 - **Mohammad Khaled Khader**
